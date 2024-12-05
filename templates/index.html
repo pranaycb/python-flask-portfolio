@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {{ data.title }}
+        </title>
+        <meta name="description" content="{{ data.meta }}">
+        <meta name="author" content="{{ data.name }}">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="font-sans bg-slate-900 text-gray-100">
+
+        <!-- Header -->
+        <div class="mx-auto max-w-screen-lg px-3 py-6">
+            <div class="flex flex-col gap-y-3 sm:flex-row sm:items-center sm:justify-between">
+                <a href="/">
+                    <div
+                        class="flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent">
+                        {{ data.headerTitle  }}
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="mx-auto max-w-screen-lg px-3 py-6">
+            <div class="flex flex-col-reverse items-center md:flex-row md:justify-between gap-y-10 md:gap-x-24">
+                <div>
+                    <h1 class="text-2xl font-bold">
+                        Hi there, I'm
+                        <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
+                            {{ data.name }}
+                        </span>
+                    </h1>
+                    <p class="mt-6 text-md leading-9">
+                        {{ data.about | safe }}
+                    </p>
+                    {% if data.technologies %}
+                    <div class="mt-6 flex flex-wrap align-center gap-4">
+                        {% for technology in data.technologies %}
+                        <img class="h-8 w-8" src={{ url_for('static', filename='img/technologies/' +technology.logo ) }}
+                            :alt="{{ technology.name }}" loading="lazy" />
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="shrink-0">
+                    <img class="h-80 w-64" src={{ url_for('static', filename='img/' + data.aboutImg ) }}
+                        alt="Hero Image" loading="lazy" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mt-6 mx-auto max-w-screen-lg px-3 py-6">
+            <div class="mb-6 text-2xl font-bold">
+                <div>
+                    My <span
+                        class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Education</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3 h-100">
+                {% if data.education %}
+                {% for education in data.education %}
+                <div class="rounded-md bg-slate-800">
+                    <div class="p-5 text-center">
+                        <h2 class="text-md font-semibold">
+                            {{ education.title }}
+                        </h2>
+                        <div class="mt-1 text-xs text-gray-400">
+                            {{ education.timeline }}
+                        </div>
+                        <div class="mt-3 text-sm flex flex-col justify-end">
+                            {{ education.desc }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="mt-6 mx-auto max-w-screen-lg px-3 py-6">
+            <div class="mb-6 text-2xl font-bold">
+                My <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Recent
+                    Projects</span>
+            </div>
+
+            {% if data.projects %}
+            {% for project in data.projects %}
+            <div class="flex flex-col gap-6 mb-10">
+                <div class="flex flex-col items-center gap-x-8 rounded-md bg-slate-800 p-3 md:flex-row">
+                    <div class="shrink-0">
+                        <img class="h-36 w-36" src={{ url_for('static', filename='img/projects/' + project.thumbnail )
+                            }} load="lazy" />
+                    </div>
+                    <div>
+                        <span class="hover:text-cyan-400">
+                            <div class="text-lg font-semibold">
+                                {{ project.title }}
+                            </div>
+                        </span>
+                        <p class="mt-2 text-sm text-gray-400">
+                            {{ project.desc }}
+                        </p>
+                        <span class="block mt-3 text-xs text-gray-500">
+                            {{ project.technology }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <!-- Footer -->
+        <div class="mx-auto max-w-screen-lg px-3 py-6">
+            <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+                <div class="sm:w-7/12">
+                    <div class="text-3xl font-bold text-center md:text-start">
+                        <span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">Thats
+                            it</span>
+                        for now
+                    </div>
+                    <p class="mt-3 text-gray-300 text-center md:text-start">
+                        {{ data.footer.text }}
+                    </p>
+                </div>
+                <div class="w-full sm:w-5/12">
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <!-- Facebook -->
+                        <a href={{ data.footer.social.facebook }} target="_blank"
+                            class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">
+                            <img class="h-5 w-5" src={{ url_for('static', filename='icon/facebook.svg' ) }} />
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href={{ data.footer.social.linkedin }} target="_blank"
+                            class="flex items-center justify-center w-10 h-10 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition duration-300">
+                            <img class="h-5 w-5" src={{ url_for('static', filename='icon/linkedin.svg' ) }} />
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href={{ data.footer.social.instagram }} target="_blank"
+                            class="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 text-white rounded-full hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 transition duration-300">
+                            <img class="h-5 w-5" src={{ url_for('static', filename='icon/instagram.svg' ) }} />
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href={{ data.footer.social.github }} target="_blank"
+                            class="flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-gray-800 transition duration-300">
+                            <img class="h-5 w-5" src={{ url_for('static', filename='icon/github.svg' ) }} />
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-auto max-w-screen-lg px-3 py-6">
+            <div class="border-t border-gray-600 pt-5">
+                <div class="text-sm text-gray-200">Copyright © {{ year }} by {{ data.name }}. Developed using Flask for
+                    <span class="text-cyan-400">Python Programming Sessional</span> course.
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a", "950": "#172554" }
+                    }
+                },
+                fontFamily: {
+                    'sans': [
+                        'Rubik',
+                        'sans-serif',
+                    ]
+                }
+            }
+        }
+    </script>
+
+</html>

@@ -1,0 +1,114 @@
+{
+    "title": "Pranay Chakraborty :: An Undocumented Feature Of Your Code",
+    "meta": "A self-taught computer programmer with a passion for learning and sharing knowledge. From a young age, I've been captivated by the power of technology and have dedicated myself to exploring its endless possibilities.",
+    "headerTitle": "~PRANAYCB~",
+    "name": "Pranay Chakraborty",
+    "about": "A self-taught computer <span class='text-cyan-400'>programmer</span> with a passion for learning and sharing knowledge. From a young age, I've been captivated by the power of technology and have dedicated myself to exploring its endless possibilities. I thrive on discovering new concepts, mastering them, and helping others on their learning journeys. Whether it's coding, engineering principles, or innovative tech projects, I'm always eager to grow and contribute meaningfully to the field.",
+    "aboutImg": "about.gif",
+    "technologies": [
+        {
+            "name": "Laravel",
+            "logo": "laravel.png"
+        },
+        {
+            "name": "Codeigniter",
+            "logo": "codeigniter.png"
+        },
+        {
+            "name": "Mysql",
+            "logo": "mysql.png"
+        },
+        {
+            "name": "Vue",
+            "logo": "vue.png"
+        },
+        {
+            "name": "React",
+            "logo": "react.png"
+        },
+        {
+            "name": "Bootstrap",
+            "logo": "bootstrap.png"
+        },
+        {
+            "name": "Tailwind",
+            "logo": "tailwind.png"
+        }
+    ],
+    "education": [
+        {
+            "title": "Secondary School Certificate (SSC)",
+            "timeline": "Jan, 2014 - Apr, 2019",
+            "desc": "Successfully complected SSC obtaining GPA 5.00 from Anowara Govt. High School"
+        },
+        {
+            "title": "Higher secondary School Certificate",
+            "timeline": "Jun, 2019 - Dec, 2021",
+            "desc": "Successfully complected HSC obtaining GPA 4.92 from Patiya Govt. College"
+        },
+        {
+            "title": "BSc. in Computer & Communication Engineering",
+            "timeline": "Jan 1, 2023 - Current",
+            "desc": "Currently studing. Hope for the best :)"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Epay :: Self Hosted Payment Automation & Invoicing Tool",
+            "desc": "This project is developed to give the user option to accept payments in their website using their own mfs (bkash, nagad, rocket, upay, ipay, cellfin, tap, okwallet) personal, agent and merchant account.",
+            "technology": "Laravel, Mysql, VueJs",
+            "thumbnail": "epay.jpg"
+        },
+        {
+            "title": "Epay Server :: Android Payment Verification Server App for Epay",
+            "desc": "This works as a server for the Epay application to verify the manual transactions.",
+            "technology": "Android, Java, Xml",
+            "thumbnail": "epay-server.jpg"
+        },
+        {
+            "title": "Fastnet :: Mikrotik API Supported ISP Billing Management System",
+            "desc": "This project is developed for Internet Service Providers (ISP) to manage their mikrotik routers and customer billing from a sigle application.",
+            "technology": "Codeigniter4, Mysql, Jquery",
+            "thumbnail": "fastnet.jpg"
+        },
+        {
+            "title": "EcommerzPay :: Saas Based Payment and Android Sms Gateway",
+            "desc": "This is a saas based payment and android sms gateway which can be used to accept payments and send sms from their own android mobile phone. This project has en extented version.",
+            "technology": "Codeigniter4, Mysql, Jquery",
+            "thumbnail": "ecommerzpay.jpg"
+        },
+        {
+            "title": "NLP Based Qn&A",
+            "desc": "This project was developed using tensorflow javascript library and vuejs which is based on NLP (Natural Language Processing). This application can answer questions from the given text.",
+            "technology": "VueJs",
+            "thumbnail": "ecommerzpay.jpg"
+        },
+        {
+            "title": "Edugrid :: Saas Based Multi-Tenant (Single Database Multiple Domain) Coaching Management System",
+            "desc": "This project was developed for coaching institutes to manage their all academic works including taking attendance, sharing study materials, online admission, online and offline examination, result and marksheet, students and teachers payment management ad many more...",
+            "technology": "Laravel, Mysql, VueJs",
+            "thumbnail": "edugrid.jpg"
+        },
+        {
+            "title": "Inventory :: Simple Inventory Management System",
+            "desc": "This project was developed for small shops to manage their products and orders.",
+            "technology": "Codeigniter4, Mysql, VueJs",
+            "thumbnail": "inventory.jpg"
+        },
+        {
+            "title": "Pranays Workspace :: A Marketplace to sell digital products",
+            "desc": "This project was developed for my online shop to sell/distribute my projects and themes.",
+            "technology": "Laravel, Mysql, VueJs",
+            "thumbnail": "pwsp.jpg"
+        }
+    ],
+    "footer": {
+        "text": "Thanks for visiting my profile. If you have some free time you can visit my social media and github profile. Hope to see you again. Stay safe :)",
+        "social": {
+            "facebook": "https://facebook.com/pranay.chakraborty.683789",
+            "instagram": "https://instagram.com/pranaycb",
+            "linkedin": "https://linkedin.com/in/pranaycb",
+            "github": "https://github.com/pranaycb"
+        }
+    }
+}
